@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessible vs Ambient Density in Arithmetic Geometry</title>
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --rule: #ccc;
+      --bg: #fff;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.45;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 28px 72px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: normal;
+      text-align: center;
+      margin: 0 0 0.35rem;
+    }
+
+    .meta {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 0.98rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin-top: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    p {
+      margin: 0.7rem 0;
+    }
+
+    .abstract {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 1rem 0;
+      margin: 1.4rem 0 1.6rem;
+    }
+
+    .abstract-title {
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    ul {
+      margin: 0.5rem 0 0.8rem 1.5rem;
+    }
+
+    li {
+      margin: 0.35rem 0;
+    }
+
+    .definition,
+    .proposition {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--rule);
+    }
+
+    .block-title {
+      font-weight: bold;
+    }
+
+    .equation {
+      text-align: center;
+      margin: 1rem 0;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.06rem;
+    }
+
+    .references {
+      margin-top: 2rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+    }
+
+    .references ul {
+      margin-left: 1.2rem;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    @media print {
+      body {
+        font-size: 11.5pt;
+      }
+
+      .page {
+        max-width: none;
+        margin: 0;
+        padding: 0.4in 0.6in 0.6in;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Accessible vs Ambient Density in Arithmetic Geometry</h1>
+    <div class="meta">Short note</div>
+
+    <section class="abstract">
+      <div class="abstract-title">Abstract.</div>
+      <p>
+        A recurring phenomenon in arithmetic geometry is that loci defined by additional symmetry
+        (e.g., reduced Mumford–Tate group or atypical monodromy) are highly structured yet sparse,
+        often appearing in sets of height-density zero. Similarly, while Hecke orbits in Shimura
+        varieties may be Zariski dense, emerging evidence suggests they are <em>p</em>-adically
+        nowhere dense.
+      </p>
+      <p>
+        We propose a minimal distinction between <em>ambient density</em> (algebraic or Zariski)
+        and <em>accessible density</em> (analytic or arithmetic), and suggest that certain sparsity
+        phenomena arise from a mismatch between these notions. A constraint-filtered model is
+        introduced to illustrate how algebraically large sets may fail to be analytically accessible.
+      </p>
+    </section>
+
+    <h2>1. Introduction</h2>
+    <p>
+      A central theme in arithmetic geometry is the distribution of special or non-generic points.
+      Classical conjectures and results (e.g., André–Oort, Zilber–Pink) emphasize that loci
+      defined by additional symmetry are highly structured yet sparse.
+    </p>
+    <p>Two representative examples are:</p>
+    <ul>
+      <li>
+        <strong>Special subvarieties:</strong> Points where additional symmetry appears
+        (e.g., smaller Mumford–Tate group or atypical monodromy) form structured loci that
+        are often sparse, for instance of height-density zero in families over number fields.
+      </li>
+      <li>
+        <strong>Hecke orbits:</strong> In Shimura varieties, the prime-to-<em>p</em> Hecke orbit
+        of a point is conjectured to be Zariski dense in its central leaf. However, recent
+        developments suggest that such orbits may be nowhere dense in the <em>p</em>-adic
+        analytic topology.
+      </li>
+    </ul>
+    <p>
+      These examples indicate that algebraic largeness may coexist with analytic sparsity.
+    </p>
+
+    <h2>2. Ambient and Accessible Density</h2>
+    <div class="definition">
+      <div class="block-title">Definition.</div>
+      <p>
+        Let <em>X</em> be a space equipped with both an algebraic topology (e.g., Zariski) and an
+        analytic or arithmetic topology (e.g., <em>p</em>-adic or height topology). For a subset
+        <em>S</em> ⊂ <em>X</em>:
+      </p>
+      <ul>
+        <li>
+          <em>S</em> is <strong>ambiently dense</strong> if its Zariski closure satisfies
+          <em>cl</em><sub>Zar</sub>(<em>S</em>) = <em>X</em>.
+        </li>
+        <li>
+          <em>S</em> is <strong>accessible</strong> if it is dense with respect to the analytic
+          topology under consideration.
+        </li>
+      </ul>
+    </div>
+
+    <p>These notions need not agree. In particular:</p>
+    <div class="equation">
+      cl<sub>Zar</sub>(S) = X &nbsp;&nbsp; ⇏ &nbsp;&nbsp; cl<sub>an</sub>(S) = X.
+    </div>
+    <p>
+      We interpret analytic density as a notion of <em>accessibility</em>, rather than mere
+      existence.
+    </p>
+
+    <h2>3. Arithmetic Illustration</h2>
+    <p>
+      Let <em>A</em><sub>t</sub> be a one-parameter family of abelian varieties over a number
+      field, parametrized by <em>t</em> ∈ ℙ<sup>1</sup>(ℚ). For generic <em>t</em>, the
+      endomorphism algebra End(<em>A</em><sub>t</sub>) is minimal, while for special parameters
+      <em>t</em> the fiber may acquire extra endomorphisms (e.g., complex multiplication).
+    </p>
+    <p>
+      Such parameters are expected to be rare; in many settings they form a set of height-density
+      zero.
+    </p>
+    <p><strong>Interpretation.</strong></p>
+    <ul>
+      <li>Special parameters satisfy additional algebraic constraints (extra symmetry).</li>
+      <li>Yet they occupy a negligible subset with respect to height.</li>
+    </ul>
+    <p>
+      This illustrates a discrepancy between algebraic structure and analytic prevalence.
+    </p>
+
+    <h2>4. Constraint-Filtered Accessibility</h2>
+    <p>
+      We propose modeling accessibility via a constraint-filtered structure.
+    </p>
+    <p>
+      Let <em>X</em> be equipped with an analytic norm or valuation |·|. Consider a subset defined by
+      a bounded condition
+    </p>
+    <div class="equation">|f(x)| ≤ C</div>
+    <p>
+      for some function <em>f</em> : <em>X</em> → ℝ and constant <em>C</em>.
+    </p>
+    <p><strong>Interpretation.</strong></p>
+    <ul>
+      <li>Algebraically, the defining conditions for <em>S</em> may allow Zariski density.</li>
+      <li>Analytically, the constraint |f(x)| ≤ C restricts accessible configurations.</li>
+    </ul>
+    <p>
+      In particular, such constraints can force subsets to be nowhere dense in analytic topologies
+      even when they are algebraically large.
+    </p>
+
+    <h2>5. A Structural Observation</h2>
+    <div class="proposition">
+      <div class="block-title">Proposition (Heuristic).</div>
+      <p>
+        Let <em>S</em> ⊂ <em>X</em> arise from an arithmetic process (e.g., a Hecke orbit or
+        specialization locus). If accessibility is governed by bounded analytic constraints
+        (e.g., valuation or height conditions), then <em>S</em> may be ambiently dense while
+        remaining nowhere dense in the induced analytic topology.
+      </p>
+    </div>
+
+    <h2>6. Relation to p-adic Geometry</h2>
+    <p>
+      In the setting of Shimura varieties, <em>p</em>-adic monodromy considerations suggest that
+      orbits exhibiting large algebraic closure may nevertheless be constrained in
+      <em>p</em>-adic analytic directions. This provides a natural setting in which ambient density
+      and accessible density diverge.
+    </p>
+
+    <h2>7. Discussion</h2>
+    <ul>
+      <li>Special loci correspond to configurations satisfying additional constraints.</li>
+      <li>Generic points populate the ambient distribution.</li>
+      <li>Sparsity reflects a mismatch between algebraic closure and analytic accessibility.</li>
+    </ul>
+    <p>
+      This viewpoint is compatible with the philosophy underlying unlikely intersection problems,
+      where multiple constraints are simultaneously imposed.
+    </p>
+
+    <h2>8. Conclusion</h2>
+    <p>
+      We suggest that distinguishing between ambient and accessible density provides a useful lens
+      for understanding sparsity phenomena in arithmetic geometry. This highlights a structural
+      distinction between algebraic existence and analytic accessibility that appears across
+      multiple settings.
+    </p>
+
+    <section class="references">
+      <h2>References</h2>
+      <ul>
+        <li>Y. André, <em>G-functions and Geometry</em>, Vieweg (1989).</li>
+        <li>B. Klingler, E. Ullmo, A. Yafaev, <em>The André–Oort conjecture</em>, Annals of Mathematics (2014).</li>
+        <li>R. Pink, <em>A combination of the conjectures of Mordell–Lang and André–Oort</em>, in <em>Geometric Methods in Algebra and Number Theory</em> (2005).</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
