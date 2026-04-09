@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2604.02535 | arxiv5.app</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <main class="container">
+
+```
+<!-- Back -->
+<p><a href="../index.html">← back to table</a></p>
+
+<!-- Title -->
+<header class="hero">
+  <h1>arXiv: 2604.02535</h1>
+
+  <p class="tagline">
+    Predictive coding and test-time scaling
+  </p>
+
+  <p class="subtag">
+    machine learning · inference · iterative updates
+  </p>
+</header>
+
+<!-- Links -->
+<section>
+  <p>
+    <strong>arXiv:</strong>
+    <a href="https://arxiv.org/abs/2604.02535" target="_blank">
+      https://arxiv.org/abs/2604.02535
+    </a>
+  </p>
+
+  <p>
+    <strong>PDF:</strong>
+    <a href="https://arxiv.org/pdf/2604.02535.pdf" target="_blank">
+      download
+    </a>
+  </p>
+</section>
+
+<!-- Summary -->
+<section>
+  <h2>summary</h2>
+
+  <p>
+    This paper studies how additional inference steps at test time can improve model performance.
+    Instead of relying only on fixed forward passes, the system iteratively refines predictions
+    through a predictive coding framework.
+  </p>
+
+  <p>
+    The key result is that performance scales with structured iteration,
+    not just model size or training scale.
+  </p>
+</section>
+
+<!-- Bridge -->
+<section>
+  <h2>bridge (9423 phase-lock)</h2>
+```
+
+<pre>
+observe → predict → compare → update
+              ↓
+         repeat (bounded)
+              ↓
+        improved alignment
+              ↓
+        signal > noise
+</pre>
+
+```
+  <p>
+    Each iteration reduces error by aligning prediction with observation.
+    The loop must remain constrained to avoid drift.
+  </p>
+</section>
+
+<!-- Interpretation -->
+<section>
+  <h2>interpretation</h2>
+
+  <ul>
+    <li>inference is not one-shot</li>
+    <li>structured loops improve results</li>
+    <li>alignment emerges through iteration</li>
+  </ul>
+
+  <p>
+    Additional steps help only when the update process preserves usable signal.
+  </p>
+</section>
+
+<!-- Minimal framing -->
+<section>
+  <h2>minimal framing</h2>
+```
+
+<pre>
+single pass
+→ partial alignment
+
+iterative passes
+→ refined alignment
+
+constraint required
+→ stable improvement
+</pre>
+
+```
+</section>
+
+<!-- Lift5 -->
+<section>
+  <h2>lift5</h2>
+
+  <p>
+    current state: <strong>zero</strong>
+  </p>
+
+  <p>
+    next step:
+  </p>
+```
+
+<pre>
+I read your paper (arXiv:2604.02535).
+
+You show that test-time iteration improves inference through predictive coding.
+
+I mapped it to a constrained update loop:
+→ observe → predict → update → signal > noise (45° 📐)
+
+Short note:
+[link]
+
+Would you be open to discussion?
+</pre>
+
+```
+</section>
+
+<!-- Related -->
+<section>
+  <h2>related</h2>
+
+  <ul>
+    <li><a href="../lift5.html">lift5 pipeline</a></li>
+    <li><a href="https://sdg5.app/main.pdf" target="_blank">sdg5.app/main.pdf</a></li>
+  </ul>
+</section>
+```
+
+  </main>
+
+</body>
+</html>
