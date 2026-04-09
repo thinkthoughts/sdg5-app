@@ -1,0 +1,22 @@
+{
+  "area": "Astrophysics / Particle DM",
+  "arxiv_id": "2604.05016",
+  "title": "Halo gamma-ray excess and minimal dark matter model",
+  "core_signal": "Galactic halo gamma-ray excess can be fit by multiple models",
+  "constraint_structure": {
+    "description": "Relic abundance, indirect detection, direct detection, and astrophysical bounds narrow parameter space",
+    "result": "Degeneracy remains in m_DM (~400–800 GeV) and coupling parameters"
+  },
+  "core_insight": "fit ≠ identifiability",
+  "resolution_condition": "identifiability = orthogonality × precision (threshold)",
+  "mapping": {
+    "framework": "constraint branch selection",
+    "interpretation": "constraints act as selection gates but do not uniquely identify solution without independent structure",
+    "45_degree_gate": "signal > noise when constraints are sufficiently independent"
+  },
+  "links": {
+    "arxiv": "https://arxiv.org/abs/2604.05016",
+    "repo": "https://github.com/thinkthoughts/constraint-branch-selection",
+    "thread": "https://x.com/Precedent_Vice/status/2042070769430360088"
+  }
+}
