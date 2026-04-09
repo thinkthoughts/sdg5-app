@@ -1,159 +1,126 @@
+// === LOAD DATA ===
+
 async function loadPaperIndex() {
-const response = await fetch("./data/index.json");
-if (!response.ok) {
-throw new Error("Could not load data/index.json");
-}
-return response.json();
+  const res = await fetch("/arxiv/data/index.json");
+  if (!res.ok) throw new Error("index.json failed");
+  return res.json();
 }
 
 async function loadPaper(id) {
-const response = await fetch(`./data/${id}.json`);
-if (!response.ok) {
-throw new Error(`Could not load JSON for ${id}`);
+  const res = await fetch(`/arxiv/data/${id}.json`);
+  if (!res.ok) throw new Error(`failed: ${id}`);
+  return res.json();
 }
-return response.json();
-}
+
+// === SAFE TEXT ===
 
 function safeText(value) {
-if (value === null || value === undefined) return "";
-return String(value)
-.replace(/&/g, "&")
-.replace(/</g, "<")
-.replace(/>/g, ">")
-.replace(/"/g, """)
-.replace(/'/g, "'");
+  if (!value) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
-function renderRepoCell(repoUrl) {
-if (!repoUrl) return "—";
+// === CELLS ===
 
-return `     <a href="${safeText(repoUrl)}" target="_blank" rel="noopener noreferrer">
-      repo     </a>
-  `;
+function repoCell(repo) {
+  if (!repo) return "—";
+  return `<a href="${repo}" target="_blank">repo</a>`;
 }
 
-function renderPaperCell(paperPage) {
-if (!paperPage) return "—";
-
-return `<a href="${safeText(paperPage)}">note</a>`;
+function paperCell(link) {
+  if (!link) return "—";
+  return `<a href="${link}">note</a>`;
 }
 
-function renderStatusCell(status) {
-if (!status) return "—";
-return `<span class="status">${safeText(status)}</span>`;
+function statusCell(status) {
+  if (!status) return "—";
+  return `<span class="status">${status}</span>`;
 }
 
-function renderEngagementCell(engagement) {
-if (engagement === "five") {
-return `<span class="engaged">five 🔥</span>`;
+function engagementCell(engagement) {
+  if (engagement === "five") {
+    return `<span class="engaged">five 🔥</span>`;
+  }
+  return `<a href="/arxiv/lift5.html" class="zero-link">zero</a>`;
 }
 
-return `<a href="lift5.html" class="zero-link">zero</a>`;
-}
-
-function buildSearchText(paper) {
-const fields = [
-paper.id,
-paper.title,
-paper.area,
-paper.date,
-paper.bridge_note,
-paper.status,
-paper.engagement,
-paper.engagement_detail,
-...(paper.tags || [])
-];
-
-return fields
-.filter(Boolean)
-.join(" ")
-.toLowerCase();
-}
+// === RENDER ===
 
 function renderRows(papers) {
-const tbody = document.getElementById("papersBody");
+  const tbody = document.getElementById("papersBody");
 
-if (!papers.length) {
-tbody.innerHTML = `       <tr>         <td colspan="7">No matching papers.</td>       </tr>
-    `;
-return;
+  if (!papers.length) {
+    tbody.innerHTML = `<tr><td colspan="7">No data</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = papers.map(p => `
+    <tr>
+      <td>${safeText(p.area)}</td>
+
+      <td>
+        <a href="${p.arxiv}" target="_blank">
+          ${safeText(p.id)}
+        </a>
+      </td>
+
+      <td>
+        <strong>${safeText(p.title)}</strong>
+        ${p.bridge_note ? `<div class="note">${safeText(p.bridge_note)}</div>` : ""}
+      </td>
+
+      <td>${paperCell(p.paper_page)}</td>
+
+      <td>${repoCell(p.repo)}</td>
+
+      <td>${statusCell(p.status)}</td>
+
+      <td>${engagementCell(p.engagement)}</td>
+    </tr>
+  `).join("");
 }
 
-tbody.innerHTML = papers.map((paper) => {
-const titleHtml = `      <strong>${safeText(paper.title)}</strong>
-      ${paper.bridge_note ?`<div class="note">${safeText(paper.bridge_note)}</div>`: ""}
-   `;
+// === SEARCH ===
 
-```
-return `
-  <tr>
-    <td>${safeText(paper.area) || "—"}</td>
-    <td>
-      ${
-        paper.arxiv
-          ? `<a href="${safeText(paper.arxiv)}" target="_blank" rel="noopener noreferrer">${safeText(paper.id)}</a>`
-          : safeText(paper.id) || "—"
-      }
-    </td>
-    <td>${titleHtml}</td>
-    <td>${renderPaperCell(paper.paper_page)}</td>
-    <td>${renderRepoCell(paper.repo)}</td>
-    <td>${renderStatusCell(paper.status)}</td>
-    <td>${renderEngagementCell(paper.engagement)}</td>
-  </tr>
-`;
-```
+function attachSearch(all) {
+  const input = document.getElementById("searchInput");
 
-}).join("");
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase();
+
+    const filtered = all.filter(p =>
+      [
+        p.id,
+        p.title,
+        p.area,
+        p.bridge_note,
+        ...(p.tags || [])
+      ].join(" ").toLowerCase().includes(q)
+    );
+
+    renderRows(filtered);
+  });
 }
 
-function sortPapers(papers) {
-return [...papers].sort((a, b) => {
-const aId = a.id || "";
-const bId = b.id || "";
-return bId.localeCompare(aId);
-});
-}
-
-function attachSearch(allPapers) {
-const input = document.getElementById("searchInput");
-
-input.addEventListener("input", () => {
-const query = input.value.trim().toLowerCase();
-
-```
-if (!query) {
-  renderRows(sortPapers(allPapers));
-  return;
-}
-
-const filtered = allPapers.filter((paper) =>
-  buildSearchText(paper).includes(query)
-);
-
-renderRows(sortPapers(filtered));
-```
-
-});
-}
+// === INIT ===
 
 async function init() {
-const tbody = document.getElementById("papersBody");
+  try {
+    const ids = await loadPaperIndex();
+    const papers = await Promise.all(ids.map(loadPaper));
 
-try {
-const ids = await loadPaperIndex();
-const papers = await Promise.all(ids.map(loadPaper));
+    papers.sort((a, b) => b.id.localeCompare(a.id));
 
-```
-renderRows(sortPapers(papers));
-attachSearch(papers);
-```
+    renderRows(papers);
+    attachSearch(papers);
 
-} catch (error) {
-console.error(error);
-tbody.innerHTML = `       <tr>         <td colspan="7">Failed to load papers.</td>       </tr>
-    `;
-}
+  } catch (err) {
+    console.error(err);
+    document.getElementById("papersBody").innerHTML =
+      `<tr><td colspan="7">Error loading data</td></tr>`;
+  }
 }
 
 init();
