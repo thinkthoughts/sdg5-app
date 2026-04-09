@@ -28,24 +28,22 @@ function safeText(value) {
 
 function repoCell(repo) {
   if (!repo) return "—";
-  return `<a href="${repo}" target="_blank">repo</a>`;
+  return `<a href="${repo}" target="_blank" rel="noopener noreferrer">repo</a>`;
+}
+
+function colabCell(colab) {
+  if (!colab) return "—";
+  return `<a href="${colab}" target="_blank" rel="noopener noreferrer">colab</a>`;
+}
+
+function tweetCell(tweet) {
+  if (!tweet) return "—";
+  return `<a href="${tweet}" target="_blank" rel="noopener noreferrer">tweet</a>`;
 }
 
 function paperCell(link) {
   if (!link) return "—";
   return `<a href="/arxiv/${link}">note</a>`;
-}
-
-function statusCell(status) {
-  if (!status) return "—";
-  return `<span class="status">${status}</span>`;
-}
-
-function engagementCell(engagement) {
-  if (engagement === "five") {
-    return `<span class="engaged">five 🔥</span>`;
-  }
-  return `<a href="/arxiv/lift5.html" class="zero-link">zero</a>`;
 }
 
 // === RENDER ===
@@ -63,23 +61,22 @@ function renderRows(papers) {
       <td>${safeText(p.area)}</td>
 
       <td>
-        <a href="${p.arxiv}" target="_blank">
+        <a href="${p.arxiv}" target="_blank" rel="noopener noreferrer">
           ${safeText(p.id)}
         </a>
       </td>
 
       <td>
         <strong>${safeText(p.title)}</strong>
-        ${p.bridge_note ? `<div class="note">${safeText(p.bridge_note)}</div>` : ""}
       </td>
 
       <td>${paperCell(p.paper_page)}</td>
 
       <td>${repoCell(p.repo)}</td>
 
-      <td>${statusCell(p.status)}</td>
+      <td>${colabCell(p.colab)}</td>
 
-      <td>${engagementCell(p.engagement)}</td>
+      <td>${tweetCell(p.tweet)}</td>
     </tr>
   `).join("");
 }
@@ -97,7 +94,6 @@ function attachSearch(all) {
         p.id,
         p.title,
         p.area,
-        p.bridge_note,
         ...(p.tags || [])
       ].join(" ").toLowerCase().includes(q)
     );
