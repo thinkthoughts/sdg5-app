@@ -11,6 +11,7 @@
 
 "paper_page": "/papers/2604.02535.html",
 "repo": "",
+"colab": "",
 
 "bridge_note": "Layered inference under predictive coding maps cleanly to constrained update loops: observation ⊕ prediction ⊕ revision. Extra test-time steps improve identification where the update process stays structured enough to keep signal > noise.",
 
