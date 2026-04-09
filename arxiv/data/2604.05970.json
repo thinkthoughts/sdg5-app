@@ -1,0 +1,52 @@
+{
+  "id": "2604.05970",
+  "title": "Holographic reconstruction from entanglement entropy, Wilson loops, and geodesic constraints",
+  "area": "Quantum Gravity",
+  "domain": "physics",
+  "date": "2026-04",
+
+  "authors": [],
+  "arxiv": "https://arxiv.org/abs/2604.05970",
+  "pdf": "https://arxiv.org/pdf/2604.05970.pdf",
+
+  "paper_page": "/papers/2604.05970.html",
+  "repo": "https://github.com/thinkthoughts/btz-phase-lock",
+  "colab": "https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v14_branching.ipynb",
+
+  "bridge_note": "Bulk reconstruction from EE, Wilson loops, and geodesics demonstrates that a single observable is insufficient; multiple independent probes reduce degeneracy but require sufficient independence to uniquely determine geometry.",
+
+  "cosine_bridge": "EE ⊕ WL ⊕ GEO act as constraint ensemble. Individual probes leave degeneracy; combined, orthogonal constraints phase-lock reconstruction (45° 📐) → identifiability emerges when constraints are independent.",
+
+  "tags": [
+    "holography",
+    "ads-cft",
+    "entanglement-entropy",
+    "wilson-loops",
+    "geodesics",
+    "bulk-reconstruction",
+    "degeneracy",
+    "identifiability",
+    "constraint-geometry"
+  ],
+
+  "status": "bridged",
+  "priority": "high",
+
+  "engagement": "tweet",
+  "engagement_date": "2026-04-08",
+  "engagement_detail": "Tweet + Grok framing mapped EE ⊕ WL ⊕ GEO to constraint ensemble and phase-lock reconstruction (45° gate).",
+
+  "contact_log": [],
+
+  "tweet": "https://x.com/Precedent_Vice/status/2041833791745094091",
+  "grok_prompt": "",
+  "infographic": "",
+
+  "sdg_link": "https://sdg5.app/main.pdf",
+
+  "related_ids": [
+    "2604.05016",
+    "2604.03163"
+  ],
+  "notes_internal": "Direct correspondence to btz-phase-lock repo: EE-only underdetermined; EE⊕WL resolves; EE⊕WL⊕GEO yields unique reconstruction (orthogonality threshold)."
+}
