@@ -11,10 +11,11 @@
 
   "paper_page": "/papers/2604.05016.html",
   "repo": "https://github.com/thinkthoughts/constraint-branch-selection",
+  "colab": "https://colab.research.google.com/github/thinkthoughts/constraint-branch-selection/blob/main/notebooks/04_orthogonality_threshold.ipynb",
 
-  "bridge_note": "Halo γ-ray excess is fit by a minimal DM model, but m_DM and coupling parameters remain degenerate. Constraint stacking reduces parameter space without selecting a unique branch.",
+  "bridge_note": "Halo γ-ray excess is fit by a minimal DM model, but m_DM and coupling parameters remain degenerate. Constraint stacking narrows the parameter space without selecting a unique solution.",
 
-  "cosine_bridge": "Fit ≠ identifiability. Constraints narrow but do not resolve; identifiability emerges only when independent (orthogonal) constraints with sufficient precision collapse remaining branches (45° 📐 signal > noise).",
+  "cosine_bridge": "Fit ≠ identifiability. Constraints reduce space but do not resolve branches; identifiability emerges only with independent (orthogonal) constraints at sufficient precision (45° 📐 signal > noise).",
 
   "tags": [
     "dark-matter",
@@ -32,7 +33,7 @@
 
   "engagement": "tweet",
   "engagement_date": "2026-04-08",
-  "engagement_detail": "Mapped paper’s residual degeneracy to 01–04 demos: constraints ≠ uniqueness; stable ≠ correct; precision threshold; orthogonality threshold.",
+  "engagement_detail": "Tweet + Grok thread connected paper’s residual degeneracy to repo demos (01–04): constraints ≠ uniqueness; stable ≠ correct; precision threshold; orthogonality threshold.",
 
   "contact_log": [],
 
@@ -42,8 +43,6 @@
 
   "sdg_link": "https://sdg5.app/main.pdf",
 
-  "related_ids": [
-    "2604.03163"
-  ],
-  "notes_internal": "Use repo as canonical bridge. 04 (orthogonality) is the key conceptual link: independent observables required for identifiability."
+  "related_ids": [],
+  "notes_internal": "Primary bridge uses repo (constraint-branch-selection) rather than a single notebook; 04 orthogonality threshold is key link to identifiability."
 }
