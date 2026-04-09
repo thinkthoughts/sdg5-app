@@ -1,0 +1,45 @@
+{
+"id": "2604.03163",
+"title": "Redshift-independent cosmology with gravitational-wave luminosity distances and fast radio burst dispersion measures",
+"area": "Cosmology",
+"domain": "astrophysics",
+"date": "2026-04",
+
+"authors": [],
+"arxiv": "https://arxiv.org/abs/2604.03163",
+"pdf": "https://arxiv.org/pdf/2604.03163.pdf",
+
+"paper_page": "/papers/2604.03163.html",
+"repo": "",
+
+"bridge_note": "GW luminosity distance ⊕ FRB dispersion measure → degeneracy reduction. Two independent observables improve identifiability (geometry ⊕ matter → signal > noise at 45° 📐).",
+
+"cosine_bridge": "Two independent signals align (geometry ⊕ matter) → constraint tightens → signal > noise (cosθ ≥ 1/√(1²+1²)).",
+
+"tags": [
+"cosmology",
+"multi-messenger",
+"gravitational-waves",
+"fast-radio-bursts",
+"degeneracy",
+"parameter-estimation"
+],
+
+"status": "bridged",
+"priority": "high",
+
+"engagement": "zero",
+"engagement_date": null,
+"engagement_detail": null,
+
+"contact_log": [],
+
+"tweet": "",
+"grok_prompt": "",
+"infographic": "",
+
+"sdg_link": "https://sdg5.app/main.pdf",
+
+"related_ids": [],
+"notes_internal": ""
+}
