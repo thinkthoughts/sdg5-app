@@ -1,49 +1,46 @@
 {
-  "id": "2604.05016",
-  "title": "Electroweak doublet dark matter for the galactic halo gamma-ray excess",
-  "area": "Astrophysics",
+  "id": "2604.03163",
+  "title": "Redshift-independent cosmology with gravitational-wave luminosity distances and fast radio burst dispersion measures",
+  "area": "Cosmology",
   "domain": "astrophysics",
   "date": "2026-04",
 
   "authors": [],
-  "arxiv": "https://arxiv.org/abs/2604.05016",
-  "pdf": "https://arxiv.org/pdf/2604.05016.pdf",
+  "arxiv": "https://arxiv.org/abs/2604.03163",
+  "pdf": "https://arxiv.org/pdf/2604.03163.pdf",
 
-  "paper_page": "/papers/2604.05016.html",
-  "repo": "https://github.com/thinkthoughts/constraint-branch-selection",
+  "paper_page": "/papers/2604.03163.html",
+  "repo": "",
 
-  "bridge_note": "Halo γ-ray excess is fit by a minimal DM model, but m_DM and coupling parameters remain degenerate. Constraint stacking reduces parameter space without selecting a unique branch.",
+  "bridge_note": "GW luminosity distance ⊕ FRB dispersion measure → degeneracy reduction. Two independent observables improve identifiability by combining geometry and matter signals.",
 
-  "cosine_bridge": "Fit ≠ identifiability. Constraints narrow but do not resolve; identifiability emerges only when independent (orthogonal) constraints with sufficient precision collapse remaining branches (45° 📐 signal > noise).",
+  "cosine_bridge": "Independent signals (geometry ⊕ matter) align to reduce degeneracy → constraint tightens → signal > noise (45° 📐, cosθ ≥ 1/√(1²+1²)).",
 
   "tags": [
-    "dark-matter",
-    "gamma-rays",
-    "halo",
+    "cosmology",
+    "multi-messenger",
+    "gravitational-waves",
+    "fast-radio-bursts",
     "degeneracy",
-    "identifiability",
-    "constraint-geometry",
-    "orthogonality",
-    "precision"
+    "parameter-estimation",
+    "identifiability"
   ],
 
   "status": "bridged",
   "priority": "high",
 
-  "engagement": "tweet",
-  "engagement_date": "2026-04-08",
-  "engagement_detail": "Mapped paper’s residual degeneracy to 01–04 demos: constraints ≠ uniqueness; stable ≠ correct; precision threshold; orthogonality threshold.",
+  "engagement": "zero",
+  "engagement_date": null,
+  "engagement_detail": null,
 
   "contact_log": [],
 
-  "tweet": "https://x.com/Precedent_Vice/status/2042070769430360088",
+  "tweet": "",
   "grok_prompt": "",
   "infographic": "",
 
   "sdg_link": "https://sdg5.app/main.pdf",
 
-  "related_ids": [
-    "2604.03163"
-  ],
-  "notes_internal": "Use repo as canonical bridge. 04 (orthogonality) is the key conceptual link: independent observables required for identifiability."
+  "related_ids": [],
+  "notes_internal": "Clean example of orthogonal observables improving identifiability (geometry ⊕ matter)."
 }
