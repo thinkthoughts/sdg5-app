@@ -13,8 +13,8 @@
   "repo": "https://github.com/thinkthoughts/btz-phase-lock",
   "colab": "https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v14_branching.ipynb",
 
-  "bridge_note": "EE alone leaves bulk reconstruction underdetermined; Wilson loops add missing timelike information, and combined probes move reconstruction toward identifiability."
-  "cosine_bridge": "EE ⊕ WL ⊕ GEO form a constraint ensemble: single probes leave degeneracy, independent probes phase-lock reconstruction into an identifiable branch (45° 📐)."
+  "bridge_note": "EE alone leaves bulk reconstruction underdetermined; Wilson loops add missing timelike information, and combined probes move reconstruction toward identifiability.",
+  "cosine_bridge": "EE ⊕ WL ⊕ GEO form a constraint ensemble: single probes leave degeneracy, independent probes phase-lock reconstruction into an identifiable branch (45° 📐).",
   "tags": [
     "holography",
     "ads-cft",
