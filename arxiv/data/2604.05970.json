@@ -13,10 +13,8 @@
   "repo": "https://github.com/thinkthoughts/btz-phase-lock",
   "colab": "https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v14_branching.ipynb",
 
-  "bridge_note": "Bulk reconstruction from EE, Wilson loops, and geodesics demonstrates that a single observable is insufficient; multiple independent probes reduce degeneracy but require sufficient independence to uniquely determine geometry.",
-
-  "cosine_bridge": "EE ⊕ WL ⊕ GEO act as constraint ensemble. Individual probes leave degeneracy; combined, orthogonal constraints phase-lock reconstruction (45° 📐) → identifiability emerges when constraints are independent.",
-
+  "bridge_note": "EE alone leaves bulk reconstruction underdetermined; Wilson loops add missing timelike information, and combined probes move reconstruction toward identifiability."
+  "cosine_bridge": "EE ⊕ WL ⊕ GEO form a constraint ensemble: single probes leave degeneracy, independent probes phase-lock reconstruction into an identifiable branch (45° 📐)."
   "tags": [
     "holography",
     "ads-cft",
