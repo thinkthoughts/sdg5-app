@@ -1,0 +1,45 @@
+{
+"id": "2604.02535",
+"title": "Predictive coding and test-time scaling",
+"area": "Machine Learning",
+"domain": "machine-learning",
+"date": "2026-04",
+
+"authors": [],
+"arxiv": "https://arxiv.org/abs/2604.02535",
+"pdf": "https://arxiv.org/pdf/2604.02535.pdf",
+
+"paper_page": "/papers/2604.02535.html",
+"repo": "",
+
+"bridge_note": "Layered inference under predictive coding maps cleanly to constrained update loops: observation ⊕ prediction ⊕ revision. Extra test-time steps improve identification where the update process stays structured enough to keep signal > noise.",
+
+"cosine_bridge": "Predict → compare → update repeats as a bounded alignment loop; additional inference steps help where constraints preserve usable signal (45° 📐 framing).",
+
+"tags": [
+"machine-learning",
+"predictive-coding",
+"test-time-scaling",
+"inference",
+"reasoning",
+"iterative-updates"
+],
+
+"status": "bridged",
+"priority": "high",
+
+"engagement": "zero",
+"engagement_date": null,
+"engagement_detail": null,
+
+"contact_log": [],
+
+"tweet": "",
+"grok_prompt": "",
+"infographic": "",
+
+"sdg_link": "https://sdg5.app/main.pdf",
+
+"related_ids": [],
+"notes_internal": ""
+}
