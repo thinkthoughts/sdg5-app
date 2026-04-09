@@ -33,7 +33,7 @@ function repoCell(repo) {
 
 function paperCell(link) {
   if (!link) return "—";
-  return `<a href="${link}">note</a>`;
+  return `<a href="/arxiv/${link}">note</a>`;
 }
 
 function statusCell(status) {
