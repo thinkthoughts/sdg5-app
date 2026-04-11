@@ -1,1 +1,189 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projection Constraint Lab</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      margin-top: 1.5em;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .banner {
+      margin-top: 10px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #0a66c2;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .small {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .pill {
+      display: inline-block;
+      background: #f2f2f2;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-right: 6px;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- TITLE -->
+  <h1>Projection Constraint Lab</h1>
+
+  <div class="small">
+    constraint without collapse · signal &gt; noise · 45° 📐
+  </div>
+
+  <!-- BANNER -->
+  <img class="banner" src="/projection-constraint-lab/images/banner.png" alt="Projection Constraint Lab banner">
+
+  <!-- LINKS -->
+  <div class="links">
+    <a href="/projection-constraint-lab/main.pdf" target="_blank">📄 Paper (PDF)</a>
+    <a href="https://github.com/thinkthoughts/projection-constraint-lab" target="_blank">💻 GitHub Repo</a>
+    <a href="https://sdg5.app/main.pdf" target="_blank">🌿 SDG5 Main</a>
+  </div>
+
+  <!-- CORE IDEA -->
+  <div class="section">
+    <h2>Core idea</h2>
+
+    <p>
+      Constraints reduce a space without forcing collapse.
+    </p>
+
+    <p>
+      <span class="pill">geometric</span>
+      cosine threshold → directional filtering
+    </p>
+
+    <p>
+      <span class="pill">arithmetic</span>
+      modular exclusion → bounded density
+    </p>
+
+    <p>
+      In high dimension:
+      random vectors become orthogonal,
+      fixed thresholds become selective,
+      and signal survives when scaled ~ 1/√d.
+    </p>
+
+    <p>
+      In arithmetic:
+      bounded modular filters preserve exact density,
+      while cumulative filters produce multiplicative decay.
+    </p>
+  </div>
+
+  <!-- GEOMETRIC -->
+  <div class="section">
+    <h2>Geometric constraint</h2>
+
+    <img src="/projection-constraint-lab/images/figure_geometric_jitter.png" alt="Geometric constraint jitter">
+
+    <p class="small">
+      Signal robustness under angular perturbation (cosine threshold ≈ 0.707).
+    </p>
+  </div>
+
+  <!-- DIMENSION -->
+  <div class="section">
+    <h2>Dimension scaling</h2>
+
+    <img src="/projection-constraint-lab/images/figure_dimension_scaling.png" alt="Dimension scaling">
+
+    <p class="small">
+      Stability emerges when perturbations scale as 1/√dimension.
+    </p>
+  </div>
+
+  <!-- MODULAR -->
+  <div class="section">
+    <h2>Arithmetic constraint</h2>
+
+    <img src="/projection-constraint-lab/images/figure_modular_density.png" alt="Modular density">
+
+    <p class="small">
+      Example: mod 25 → exact retained density 24/25.
+    </p>
+  </div>
+
+  <!-- UNIFIED -->
+  <div class="section">
+    <h2>Unified view</h2>
+
+    <img src="/projection-constraint-lab/images/figure_unified_threshold.png" alt="Unified threshold">
+
+    <p class="small">
+      geometric rejection ↔ arithmetic retention
+    </p>
+  </div>
+
+  <!-- NOTEBOOKS -->
+  <div class="section">
+    <h2>Run notebooks</h2>
+
+    <p>
+      <a href="https://colab.research.google.com/github/thinkthoughts/projection-constraint-lab/blob/main/colabs/constraint_gate_v6_publication_figures.ipynb" target="_blank">v6 (figures)</a><br/>
+      <a href="https://colab.research.google.com/github/thinkthoughts/projection-constraint-lab/blob/main/colabs/constraint_gate_v7_bounded_density_24_25.ipynb" target="_blank">v7 (modular density)</a><br/>
+      <a href="https://colab.research.google.com/github/thinkthoughts/projection-constraint-lab/blob/main/colabs/constraint_gate_v9_threshold_bounds.ipynb" target="_blank">v9 (threshold laws)</a>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Projection Constraint Lab · SDG5.app<br/>
+    constraint ≠ collapse
+  </div>
+
+</div>
+
+</body>
+</html>
