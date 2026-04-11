@@ -20,7 +20,7 @@
 
     <div class="button-row">
       <a href="https://sdg5.app/btz-phase-lock" target="_blank" rel="noopener noreferrer">RESULTS PAPER - INTRO</a> (repo below)<br />
-      
+
       <a href="https://arxiv.org/abs/2604.05970" target="_blank" rel="noopener noreferrer">arXiv</a>
       <a href="https://arxiv.org/pdf/2604.05970.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
       <a href="https://github.com/thinkthoughts/btz-phase-lock" target="_blank" rel="noopener noreferrer">Repo</a>
@@ -33,29 +33,34 @@
       <p>
         This paper is a clean holographic example of constraint-based identifiability.
         Entanglement entropy alone does not uniquely reconstruct bulk geometry.
-        A second, independent probe — Wilson loops — adds missing information.
-        In that sense:
+        Additional probes reduce degeneracy by adding independent information.
+      </p>
+
+      <p>
+        In our corresponding experiments (see repo + v20 paper), a probe sweep shows that
+        not all observables are required in this setup.
       </p>
 
       <p class="equation">
         EE-only → underdetermined<br />
-        EE ⊕ WL → reduced degeneracy<br />
-        EE ⊕ WL ⊕ GEO → phase-lock reconstruction
+        EE ⊕ GEO → strong constraint<br />
+        EE ⊕ GEO ⊕ d → sufficient (minimal set)<br />
+        WL → not required (in this setup)
       </p>
     </section>
 
     <section>
       <h3>9423 / constraint bridge</h3>
       <p>
-        One observable is not enough.
-        Constraint structure matters.
-        Independent probes tighten reconstruction because they do not all point in the same direction.
+        The key question is not how many observables are used, but whether they add
+        independent structure. Value fit alone does not guarantee identifiability.
       </p>
 
       <p class="equation">
         fit ≠ identifiability<br />
-        precision alone ≠ enough<br />
-        orthogonality × precision → unique branch
+        value ≠ structure<br />
+        derivative → local structure constraint<br />
+        orthogonality × structure → identifiable branch
       </p>
 
       <p>
@@ -71,31 +76,49 @@
     <section>
       <h3>Why it matters</h3>
       <p>
-        Holographic inverse problems are not just about training a network until loss goes down.
-        They are about whether the observable set is sufficient to distinguish one geometry from another.
-        This is why EE-only can stay stable yet incomplete, while EE ⊕ WL and then EE ⊕ WL ⊕ GEO move toward identifiable reconstruction.
+        Holographic inverse problems are not just about minimizing loss.
+        They depend on whether the observable set is sufficient to distinguish
+        one geometry from another.
       </p>
+
+      <p>
+        The v20 result shows that:
+      </p>
+
+      <ul>
+        <li>value fit alone can remain ambiguous</li>
+        <li>derivative constraints enforce local structure</li>
+        <li>GEO provides geometric anchoring</li>
+        <li>the minimal identifying set can be smaller than the full probe set</li>
+      </ul>
     </section>
 
     <section>
       <h3>Repo correspondence</h3>
       <p>
-        This paper maps directly onto the <code>btz-phase-lock</code> demos:
+        This paper maps directly onto the <code>btz-phase-lock</code> experiments:
       </p>
 
       <ul>
-        <li>EE-only → one function flatlines / inverse problem remains degenerate</li>
-        <li>EE ⊕ WL → missing structure becomes constrained</li>
-        <li>EE ⊕ WL ⊕ GEO → unique bulk branch becomes selectable</li>
+        <li>EE-only → degenerate inverse problem</li>
+        <li>multi-slice → reduces ambiguity</li>
+        <li>+ derivative → enforces structure (v19)</li>
+        <li>probe sweep → minimal set identified (v20)</li>
       </ul>
+
+      <p class="equation">
+        EE ⊕ GEO ⊕ d → minimal identifying set
+      </p>
     </section>
 
     <section>
       <h3>Minimal summary</h3>
       <p class="equation">
-        more loss terms ≠ enough<br />
-        independent observables = new information<br />
-        orthogonal constraints → identifiable reconstruction
+        more probes ≠ necessary<br />
+        independent structure = necessary<br />
+        derivative → shape<br />
+        GEO → anchor<br />
+        EE ⊕ GEO ⊕ d → sufficient
       </p>
     </section>
 
@@ -105,7 +128,7 @@
         <li><a href="https://arxiv.org/abs/2604.05970" target="_blank" rel="noopener noreferrer">arXiv abstract</a></li>
         <li><a href="https://arxiv.org/pdf/2604.05970.pdf" target="_blank" rel="noopener noreferrer">PDF</a></li>
         <li><a href="https://github.com/thinkthoughts/btz-phase-lock" target="_blank" rel="noopener noreferrer">btz-phase-lock repo</a></li>
-        <li><a href="https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v14_branching.ipynb" target="_blank" rel="noopener noreferrer">Colab notebook</a></li>
+        <li><a href="https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v20_probe_sweep.ipynb" target="_blank" rel="noopener noreferrer">Colab notebook</a></li>
         <li><a href="https://x.com/Precedent_Vice/status/2041833791745094091" target="_blank" rel="noopener noreferrer">Tweet thread</a></li>
         <li><a href="https://sdg5.app/main.pdf" target="_blank" rel="noopener noreferrer">sdg5.app/main.pdf</a></li>
       </ul>
