@@ -1,1 +1,143 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>btz-phase-lock — Minimal Identifying Set</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0b0b0c;
+      color: #eaeaea;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 720px;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      color: #aaa;
+      margin-bottom: 2rem;
+    }
+
+    .claim {
+      font-size: 1.2rem;
+      margin: 2rem 0;
+      padding: 1rem;
+      border-left: 3px solid #4ade80;
+      background: #111;
+    }
+
+    a {
+      color: #4ade80;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 2rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-top: 8px;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>btz-phase-lock</h1>
+
+    <div class="tagline">
+      constraint → signal &gt; noise → structure &nbsp; • &nbsp; 45° 📐
+    </div>
+
+    <div class="claim">
+      <b>v20 result:</b><br/>
+      EE ⊕ GEO ⊕ derivative → sufficient<br/>
+      WL not required (in this setup)
+    </div>
+
+    <div class="links">
+      📄 <a href="./main.pdf">Read the paper (PDF)</a><br/>
+      💻 <a href="https://github.com/thinkthoughts/btz-phase-lock">GitHub repo</a><br/>
+      ▶️ <a href="https://colab.research.google.com/github/thinkthoughts/btz-phase-lock/blob/main/ads4_phase_lock_v20_probe_sweep.ipynb">Colab (v20)</a>
+    </div>
+
+    <div class="section">
+      <h2>Summary</h2>
+      <p>
+        This project studies constraint-first reconstruction of geometry using multiple probe observables (EE, WL, GEO).
+      </p>
+      <p>
+        Earlier results show that matching observable values alone can leave ambiguity. Adding a derivative constraint enforces local structure, and a probe sweep reveals that not all observables are required.
+      </p>
+      <p>
+        In this setup, the minimal identifying set is:
+      </p>
+      <p><b>EE ⊕ GEO ⊕ derivative</b></p>
+    </div>
+
+    <div class="section">
+      <h2>Context</h2>
+      <p>
+        This work was developed alongside experiments in neural reconstruction of geometry under shared multi-slice constraints.
+      </p>
+      <p>
+        It connects to questions raised in recent arXiv work on multi-observable reconstruction:
+      </p>
+      <p>
+        <a href="https://arxiv.org/abs/2604.05970">arXiv:2604.05970</a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Progression</h2>
+      <ul>
+        <li>v17 → indistinguishable observables</li>
+        <li>v18 → multi-slice reduces ambiguity</li>
+        <li>v19 → derivative enforces structure</li>
+        <li>v20 → minimal identifying set</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Notes</h2>
+      <ul>
+        <li>synthetic targets (demo-level)</li>
+        <li>minimal MLP (tanh)</li>
+        <li>result is setup-specific (not universal)</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      sdg5.app • btz-phase-lock
+    </div>
+
+  </div>
+
+</body>
+</html>
