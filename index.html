@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SDG5 App</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2em;
+    }
+
+    .tagline {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0a66c2;
+    }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 12px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: #ccc;
+      background: #fafafa;
+    }
+
+    .small {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 6px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>SDG5 App</h1>
+  <div class="tagline">
+    signal &gt; noise · constraint ≠ collapse · 45° 📐
+  </div>
+
+  <!-- FEATURED -->
+  <div class="section">
+    <h2>Featured</h2>
+
+    <a href="/projection-constraint-lab/">
+      <div class="card">
+        <strong>Projection Constraint Lab</strong>
+        <div class="small">
+          geometric (cosine threshold) ↔ arithmetic (modular density)
+        </div>
+      </div>
+    </a>
+
+    <a href="/projection-constraint-lab/main.pdf">
+      <div class="card">
+        <strong>Paper (PDF)</strong>
+        <div class="small">
+          constraint without collapse
+        </div>
+      </div>
+    </a>
+
+    <a href="/arxiv/">
+      <div class="card">
+        <strong>arXiv Bridge</strong>
+        <div class="small">
+          cross-domain notes and mappings
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- NETWORK -->
+  <div class="section">
+    <h2>Network</h2>
+
+    <a href="https://antiviolentintelligence.ai" target="_blank">
+      <div class="card">
+        <strong>Antiviolent Intelligence</strong>
+      </div>
+    </a>
+
+    <a href="https://goodmath.app" target="_blank">
+      <div class="card">
+        <strong>Good Math</strong>
+      </div>
+    </a>
+
+    <a href="https://antiviolentwomen.app" target="_blank">
+      <div class="card">
+        <strong>Antiviolent Women</strong>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CORE IDEA -->
+  <div class="section">
+    <h2>Core idea</h2>
+
+    <p>
+      Constraints reduce a space without forcing collapse.
+    </p>
+
+    <p>
+      In high dimension:
+      random vectors become orthogonal,
+      fixed thresholds become selective,
+      and signal survives when scaled ~ 1/√d.
+    </p>
+
+    <p>
+      In arithmetic:
+      bounded modular filters preserve exact density,
+      while cumulative filters produce multiplicative decay.
+    </p>
+
+  </div>
+
+  <div class="footer">
+    SDG5 · signal &gt; noise
+  </div>
+
+</div>
+
+</body>
+</html>
