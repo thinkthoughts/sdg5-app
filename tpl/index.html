@@ -16,7 +16,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 920px;
       margin: auto;
       padding: 20px;
     }
@@ -61,13 +61,6 @@
       background: #333;
     }
 
-    .code {
-      font-family: monospace;
-      background: #f4f4f4;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
     .principles {
       background: #f9f9f9;
       padding: 15px;
@@ -84,7 +77,23 @@
     a {
       color: #0066cc;
     }
+
+    ul {
+      padding-left: 20px;
+    }
   </style>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -95,24 +104,27 @@
       Constraint-based modeling for consistent vs inconsistent outcomes.
     </div>
 
-    <img src="docs/banner.png" class="banner" alt="Triplet Phase-Lock Overview" />
+    <img src="../docs/banner.png" class="banner" alt="Triplet Phase-Lock Overview" />
 
     <p>
       Dual-path construction framework separating inconsistent assignment from consistent construction.
     </p>
 
     <p>
-      <strong>construction ≠ assignment</strong>
+      \[
+      \text{construction} \neq \text{assignment}
+      \]
     </p>
 
     <p>
       <a href="https://github.com/thinkthoughts/triplet-phase-lock" class="btn">GitHub Repo</a>
-      <a href="glossary.html" class="btn">Glossary</a>
+      <a href="./glossary.html" class="btn">Glossary</a>
+      <a href="../docs/index.md" class="btn">Docs</a>
     </p>
 
     <div class="section">
       <h2>Triplet Progression</h2>
-      <img src="docs/triplet_progression_light.png" class="banner" alt="Triplet Progression Diagram" />
+      <img src="../docs/triplet_progression_light.png" class="banner" alt="Triplet Progression Diagram" />
     </div>
 
     <div class="section">
@@ -145,8 +157,8 @@
       <h2>Core Principles</h2>
 
       <ul>
-        <li><strong>construction ≠ assignment</strong></li>
-        <li><strong>constraint → signal &gt; noise</strong></li>
+        <li>\[ \text{construction} \neq \text{assignment} \]</li>
+        <li>\[ \text{constraint} \rightarrow \text{signal} > \text{noise} \]</li>
         <li><strong>structure → consistency</strong></li>
       </ul>
     </div>
@@ -175,7 +187,9 @@
 
     <footer>
       <p>
-        Triplet Phase-Lock · Constraint → Signal &gt; Noise
+        \[
+        \text{constraint} \rightarrow \text{signal} > \text{noise}
+        \]
       </p>
     </footer>
 
