@@ -61,7 +61,23 @@
     }
 
     a { color: #0066cc; }
+
+    ul {
+      padding-left: 20px;
+    }
   </style>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -103,7 +119,7 @@
         <li>corresponds to VC</li>
       </ul>
 
-      <p><em>“gravitational” denotes stability, not a specific physical model</em></p>
+      <p><em>“gravitational” denotes stability and resistance to collapse, not a specific physical model</em></p>
     </div>
 
     <div class="section">
@@ -123,9 +139,9 @@
 
       <ul>
         <li>A — anchor</li>
-        <li>B — relation</li>
+        <li>B — bilateral</li>
         <li>C — constraint</li>
-        <li>D — consistency</li>
+        <li>D — domain consistency</li>
       </ul>
     </div>
 
@@ -133,7 +149,9 @@
       <h2>Triplet</h2>
 
       <p>
-        Π⁽ⁿ⁾ = (Piᵢ, Piᵢ₊₁, Piᵢ₊₂)
+        \[
+        \Pi^{(n)} = (P_i, P_{i+1}, P_{i+2})
+        \]
       </p>
 
       <p>
@@ -155,11 +173,19 @@
     <div class="section box">
       <h2>Key Relation</h2>
 
-      <p><strong>construction ≠ assignment</strong></p>
+      <p>
+        \[
+        \text{construction} \neq \text{assignment}
+        \]
+      </p>
     </div>
 
     <footer>
-      <p>Triplet Phase-Lock · constraint → signal &gt; noise</p>
+      <p>
+        \[
+        \text{constraint} \rightarrow \text{signal} > \text{noise}
+        \]
+      </p>
     </footer>
 
   </main>
