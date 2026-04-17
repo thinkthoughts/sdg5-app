@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triplet Phase-Lock</title>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #111;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .tagline {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .banner {
+      width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 8px 5px 8px 0;
+      padding: 10px 14px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    .code {
+      font-family: monospace;
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .principles {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    a {
+      color: #0066cc;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <h1>Triplet Phase-Lock</h1>
+    <div class="tagline">
+      Constraint-based modeling for consistent vs inconsistent outcomes.
+    </div>
+
+    <img src="../docs/banner.png" class="banner" alt="Triplet Phase-Lock Overview" />
+
+    <p>
+      Dual-path construction framework separating inconsistent assignment from consistent construction.
+    </p>
+
+    <p>
+      <strong>construction ≠ assignment</strong>
+    </p>
+
+    <p>
+      <a href="https://github.com/thinkthoughts/triplet-phase-lock" class="btn">GitHub Repo</a>
+      <a href="../docs/glossary.html" class="btn">Glossary</a>
+    </p>
+
+    <div class="section">
+      <h2>Triplet Progression</h2>
+      <img src="../docs/triplet_progression_light.png" class="banner" alt="Triplet Progression Diagram" />
+    </div>
+
+    <div class="section">
+      <h2>Quick Start</h2>
+      <p>Run a notebook and compare outcomes:</p>
+
+      <p>
+        <a class="btn" href="https://colab.research.google.com/github/thinkthoughts/triplet-phase-lock/blob/main/notebooks/00_0Pi-2Pi_expand_IA.ipynb">
+          Open IA (inconsistent)
+        </a>
+
+        <a class="btn" href="https://colab.research.google.com/github/thinkthoughts/triplet-phase-lock/blob/main/notebooks/00_0Pi-2Pi_expand_VC.ipynb">
+          Open VC (consistent)
+        </a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Core Idea</h2>
+
+      <p><strong>Same structure, different outcome:</strong></p>
+
+      <ul>
+        <li><strong>IA</strong> — collapse → reassignment → mismatch</li>
+        <li><strong>VC</strong> — anchor → relation → constraint → consistency</li>
+      </ul>
+    </div>
+
+    <div class="section principles">
+      <h2>Core Principles</h2>
+
+      <ul>
+        <li><strong>construction ≠ assignment</strong></li>
+        <li><strong>constraint → signal &gt; noise</strong></li>
+        <li><strong>structure → consistency</strong></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Use Cases</h2>
+
+      <ul>
+        <li>Mathematics → identify invalid vs valid constructions</li>
+        <li>Physics → stable vs unstable systems</li>
+        <li>Machine Learning → signal vs noise separation</li>
+        <li>Agents → verify-before-act systems</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Related Work</h2>
+
+      <ul>
+        <li><a href="https://github.com/thinkthoughts/projection-constraint-lab">projection-constraint-lab</a></li>
+        <li><a href="https://github.com/thinkthoughts/rydberg-parameter-lab">rydberg-parameter-lab</a></li>
+        <li><a href="https://github.com/thinkthoughts/btz-phase-lock">btz-phase-lock</a></li>
+        <li><a href="https://github.com/thinkthoughts/agent-constraint-gate">agent-constraint-gate</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>
+        Triplet Phase-Lock · Constraint → Signal &gt; Noise
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>
