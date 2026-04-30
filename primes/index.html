@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Higher-Order Structure in Residue-Class Transitions of Consecutive Primes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MathJax HTML version of a short paper on residue-class transitions of consecutive primes modulo 30.">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #141414;
+      --panel-2: #101010;
+      --text: #eeeeee;
+      --muted: #bdbdbd;
+      --line: #2a2a2a;
+      --link: #8fb4ff;
+      --accent: #fde725;
+      --code: #191919;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(53,183,121,0.12), transparent 36rem),
+        radial-gradient(circle at bottom left, rgba(68,1,84,0.25), transparent 36rem),
+        var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    header {
+      padding: 36px 0 32px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4.6rem);
+      line-height: 1.02;
+      margin: 0 0 16px;
+      letter-spacing: -0.055em;
+      max-width: 920px;
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 12px;
+    }
+
+    .abstract {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      margin: 32px 0;
+      box-shadow: 0 18px 70px rgba(0,0,0,0.26);
+    }
+
+    .abstract h2 {
+      margin-top: 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 26px 0 40px;
+    }
+
+    nav a {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    section {
+      margin: 42px 0;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+      letter-spacing: -0.025em;
+      margin: 0 0 14px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .equation {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 16px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+
+    figure {
+      margin: 28px 0 38px;
+      padding: 18px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    figure img {
+      display: block;
+      max-width: min(100%, 760px);
+      margin: 0 auto;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    figcaption {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .refs {
+      padding-left: 1.2rem;
+    }
+
+    .refs li {
+      margin-bottom: 10px;
+    }
+
+    .note {
+      color: var(--muted);
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      margin: 22px 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 56px;
+      padding-top: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 28px 16px 56px;
+      }
+
+      figure {
+        padding: 12px;
+      }
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      svg: { fontCache: "global" }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <div class="kicker">Prime Numbers Lab</div>
+      <h1>Higher-Order Structure in Residue-Class Transitions of Consecutive Primes</h1>
+      <div class="byline">
+        Dan Hawkley · <a href="https://github.com/thinkthoughts/prime-numbers-lab">github.com/thinkthoughts/prime-numbers-lab</a>
+      </div>
+    </header>
+
+    <section class="abstract" id="abstract">
+      <h2>Abstract</h2>
+      <p>We encode consecutive primes as residue classes modulo \(30\), producing a sequence over 8 states \(\{1,7,11,13,17,19,23,29\}\). We construct a first-order transition operator \(P\) and compare the empirical two-step operator \(P^{(2)}\) to the baseline \(P^2\) via \(\Delta = P^{(2)} - P^2\).</p>
+      <p>Using the first \(N\) primes, \(\Delta\) has low-rank structure. Low-rank approximations improve prediction of \(P^{(2)}\) relative to \(P^2\).</p>
+      <p>Synthetic controls produce distinct residual operators. Residue-class transitions of consecutive primes modulo \(30\) are represented by the residual operator \(\Delta = P^{(2)} - P^2\), which exhibits higher-order structure.</p>
+    </section>
+
+    <nav aria-label="Page navigation">
+      <a href="#introduction">Introduction</a>
+      <a href="#related-work">Related Work</a>
+      <a href="#framework">Transition Framework</a>
+      <a href="#results">Results</a>
+      <a href="#validation">Validation</a>
+      <a href="#discussion">Discussion</a>
+      <a href="#conclusion">Conclusion</a>
+    </nav>
+
+    <section id="introduction">
+      <h2>1. Introduction</h2>
+      <p>We study transitions of consecutive primes. Reducing them modulo \(30\) yields a sequence over 8 residue states \(\{1,7,11,13,17,19,23,29\}\).</p>
+      <p>We construct a transition operator \(P\) and compare \(P^{(2)}\) to \(P^2\). The residual</p>
+      <div class="equation">\[
+        \Delta = P^{(2)} - P^2
+      \]</div>
+      <p>isolates second-order structure.</p>
+      <p>We test whether \(\Delta\) reflects random variation or systematic structure.</p>
+    </section>
+
+    <section id="related-work">
+      <h2>2. Related Work</h2>
+      <p>Classical models of prime gaps include probabilistic heuristics such as Cramér's model and analytic frameworks for prime distributions.</p>
+      <p>Markov models provide a baseline for transition structure, while information-theoretic measures quantify higher-order structure relative to first-order statistics.</p>
+      <p>This work analyzes residue-class transitions of consecutive primes using empirical transition operators and the residual operator \(\Delta = P^{(2)} - P^2\).</p>
+    </section>
+
+    <section id="framework">
+      <h2>3. Transition Framework</h2>
+      <p>Let \(\{x_n\}_{n=1}^{N}\) be residues modulo \(30\) of the first \(N\) primes.</p>
+      <p>We estimate</p>
+      <div class="equation">\[
+        P_{ij} =
+        \frac{\#\{n : x_n = i,\; x_{n+1}=j\}}
+             {\#\{n : x_n = i\}}.
+      \]</div>
+      <p>Define</p>
+      <div class="equation">\[
+        \Delta = P^{(2)} - P^2.
+      \]</div>
+    </section>
+
+    <section id="results">
+      <h2>4. Results</h2>
+
+      <p>Figure 1 shows the transition operator \(P\).</p>
+      <figure>
+        <img src="images/transition_operator_P_heatmap.png" alt="Heatmap of the first-order transition operator P.">
+        <figcaption>Figure 1. First-order transition operator \(P\).</figcaption>
+      </figure>
+
+      <p>Figure 2 shows the residual \(\Delta = P^{(2)} - P^2\), with structured deviations.</p>
+      <figure>
+        <img src="images/two_step_delta_heatmap.png" alt="Heatmap of the residual operator Delta equals P two-step minus P squared.">
+        <figcaption>Figure 2. Residual operator \(\Delta = P^{(2)} - P^2\).</figcaption>
+      </figure>
+
+      <p>Figure 3 shows low-rank structure in \(\Delta\).</p>
+      <figure>
+        <img src="images/singular_spectrum_real_vs_null.png" alt="Line plot comparing low-rank structure of the residual operator with controls.">
+        <figcaption>Figure 3. Low-rank structure of \(\Delta\).</figcaption>
+      </figure>
+
+      <p>Figure 4 shows statistical validation across controls.</p>
+      <figure>
+        <img src="images/stat_validation_pvalues.png" alt="Statistical validation p-value matrix.">
+        <figcaption>Figure 4. Statistical validation p-values.</figcaption>
+      </figure>
+
+      <p>Figure 5 shows summary ratios for empirical and control statistics.</p>
+      <figure>
+        <img src="images/publication_summary_ratios.png" alt="Summary ratios for empirical and control statistics.">
+        <figcaption>Figure 5. Summary ratios for empirical and control statistics.</figcaption>
+      </figure>
+    </section>
+
+    <section id="validation">
+      <h2>5. Validation</h2>
+      <p>The prime sequence differs from iid and Markov control sequences in the residual operator \(\Delta\). Block resampling shows partial agreement, indicating local structure.</p>
+    </section>
+
+    <section id="discussion">
+      <h2>6. Discussion</h2>
+      <p>The operator \(\Delta\) isolates second-order structure relative to \(P\). Its structure is low-rank, with deviations concentrated in a small number of components.</p>
+      <p>A small number of components approximates \(P^{(2)}\) more accurately than \(P^2\).</p>
+      <p>This structure persists across sample sizes \(N\).</p>
+    </section>
+
+    <section id="conclusion">
+      <h2>7. Conclusion</h2>
+      <p>Residue-class transitions of consecutive primes modulo \(30\) are represented by the residual operator \(\Delta = P^{(2)} - P^2\), which exhibits higher-order structure.</p>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="refs">
+        <li>David Aldous. Random walks on finite groups and rapidly mixing Markov chains. <em>Séminaire de Probabilités</em>, 1983.</li>
+        <li>Thomas Cover and Joy Thomas. <em>Elements of Information Theory</em>. Wiley, 2006.</li>
+        <li>Harald Cramér. On the order of magnitude of prime gaps. <em>Acta Arithmetica</em>, 1936.</li>
+        <li>G. H. Hardy and E. M. Wright. <em>An Introduction to the Theory of Numbers</em>. Oxford University Press, 1979.</li>
+      </ol>
+    </section>
+
+    <footer>
+      <p>Static MathJax page for <code>sdg5.app/primes.html</code>. Place figure files in <code>images/</code> next to this HTML file.</p>
+    </footer>
+  </main>
+</body>
+</html>
